@@ -1,0 +1,10 @@
+{
+   "name": "latticha-portfolio",
+   "compatibility_date": "2026-08-22",
+   "assets": {
+      "directory": "./dist",
+      // The app uses BrowserRouter, so paths like /projects/nontre-redesign
+      // match no file and must fall back to index.html with a 200.
+      "not_found_handling": "single-page-application",
+   },
+}

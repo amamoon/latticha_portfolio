@@ -43,15 +43,16 @@ update the import to point at the generated `.webp`.
 
 ## Deployment
 
-The site deploys to Cloudflare Pages as a static build.
+The site deploys to Cloudflare Workers as static assets, configured in
+`wrangler.jsonc`. Pushing to `main` triggers a build and deploy.
 
 ### Build settings
 
-| Setting          | Value           |
-| ---------------- | --------------- |
-| Framework preset | None            |
-| Build command    | `npm run build` |
-| Output directory | `dist`          |
+| Setting          | Value                 |
+| ---------------- | --------------------- |
+| Build command    | `npm run build`       |
+| Deploy command   | `npx wrangler deploy` |
+| Output directory | `dist`                |
 
 Cloudflare reads the Node version from `.nvmrc`.
 
@@ -61,9 +62,8 @@ The app uses `BrowserRouter`, so the host must serve `index.html` for paths that
 do not match a file. Without this, loading or refreshing a case study URL such
 as `/projects/nontre-redesign` returns a 404.
 
-`public/_redirects` handles this. Vite copies the file to the root of `dist`
-during the build, and Cloudflare applies it automatically:
+The `assets.not_found_handling` setting in `wrangler.jsonc` handles this.
 
-```
-/*    /index.html    200
-```
+Do not use a `_redirects` file for this. Workers validates `_redirects` more
+strictly than Pages does and rejects the catch-all `/* /index.html 200` rule as
+an infinite loop.
