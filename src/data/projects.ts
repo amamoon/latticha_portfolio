@@ -1,12 +1,12 @@
-import glitchStoreCover from '@/assets/homepage/ux_design/glitchstore.png'
+import glitchWebsiteCover from '@/assets/homepage/ux_design/glitchstore.webp'
 import hsbcDeceasedEstateCover from '@/assets/homepage/ux_design/hsbcdeceased.png'
-import merchHomepageCover from '@/assets/homepage/ux_design/merchhomepage.png'
-import nontreRedesignCover from '@/assets/homepage/ux_design/nontre.png'
-import taidoWebsiteCover from '@/assets/homepage/ux_design/taidowebsite.png'
-import rspcaEdmEnhancementCover from '@/assets/homepage/ux_design/rspca.png'
-import brandingBibleCover from '@/assets/homepage/brandingbiblecover.png'
-import glitchMerchandiseCover from '@/assets/homepage/proj_design/glitchmerchandise.png'
-import kogCover from '@/assets/homepage/proj_design/kogbook.png'
+import glitchShowHomepageCover from '@/assets/homepage/ux_design/merchhomepage.webp'
+import nontreRedesignCover from '@/assets/homepage/ux_design/nontre.webp'
+import taidoWebsiteCover from '@/assets/homepage/ux_design/taidowebsite.webp'
+import rspcaEdmEnhancementCover from '@/assets/homepage/ux_design/rspca.webp'
+import brandingBibleCover from '@/assets/homepage/brandingbiblecover.webp'
+import glitchMerchandiseCover from '@/assets/homepage/proj_design/glitchmerchandise.webp'
+import kogCover from '@/assets/homepage/proj_design/kogbook.webp'
 
 /**
  * Image asset referenced from a project section.
@@ -101,16 +101,16 @@ export type Project = {
  */
 export const projects: readonly Project[] = [
    {
-      id: 'proj-store-redesign',
-      slug: 'store-redesign',
-      title: 'Store Redesign',
+      id: 'proj-glitch-website',
+      slug: 'glitch-website',
+      title: 'Glitch Website',
       section: 'projects',
       projectsNav: 'ux-design',
-      coverSrc: glitchStoreCover,
-      coverAlt: 'Glitch Store Redesign',
+      coverSrc: glitchWebsiteCover,
+      coverAlt: 'Glitch Website',
       order: 1,
       summary:
-         'End-to-end cllommerce experience refresh: IA, UI system, and rollout for the flagship retail channel.',
+         'End-to-end commerce experience refresh: IA, UI system, and rollout for the flagship retail channel.',
       year: '2024',
       tags: ['Retail', 'UX'],
    },
@@ -129,13 +129,13 @@ export const projects: readonly Project[] = [
       tags: ['Finance', 'Service design'],
    },
    {
-      id: 'proj-merch-homepage',
-      slug: 'merch-homepage',
-      title: 'Merch Homepage',
+      id: 'proj-glitch-show-homepage',
+      slug: 'glitch-show-homepage',
+      title: 'Glitch Show Homepage',
       section: 'projects',
       projectsNav: 'ux-design',
-      coverSrc: merchHomepageCover,
-      coverAlt: 'Merch Homepage',
+      coverSrc: glitchShowHomepageCover,
+      coverAlt: 'Glitch Show Homepage',
       order: 3,
       summary:
          'Campaign-led landing system for drops, bundles, and artist collaborations with modular blocks.',

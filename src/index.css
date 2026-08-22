@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Vollkorn:ital@1&family=Yuji+Boku&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anuphan:wght@400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Vollkorn:ital@1&family=Yuji+Boku&display=swap');
 
 @import 'tailwindcss';
 
@@ -7,13 +7,19 @@
    --color-brand-blue: #4797dc;
    --color-light-blue: #79bbf0;
    --color-base: #796d62;
+   /* Figma `base_dark`: body copy on the About page. */
+   --color-base-dark: #6e5f51;
    --color-background: #fafaf7;
    --color-tag-blue: rgb(42 156 255 / 0.46);
    --color-tag-light-blue: rgb(129 198 255 / 0.52);
+   /* Highlighter band behind emphasised case-study copy. */
+   --color-marker: rgb(255 224 137 / 0.47);
 
    --font-display: 'Yuji Boku', ui-serif, serif;
    --font-body: 'Cormorant Garamond', ui-serif, Georgia, serif;
    --font-italic: 'Vollkorn', ui-serif, Georgia, serif;
+   /* Figma `QUOTE` / section eyebrows on case-study pages. */
+   --font-ui: 'Anuphan', ui-sans-serif, system-ui, sans-serif;
 
    --text-nav: 16px;
    --text-nav--line-height: 1.8;

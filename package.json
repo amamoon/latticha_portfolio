@@ -10,6 +10,8 @@
       "lint:eslint": "eslint .",
       "format": "prettier --write .",
       "format:check": "prettier --check .",
+      "optimize:images": "node scripts/optimize-images.mjs",
+      "optimize:images:check": "node scripts/optimize-images.mjs --check",
       "preview": "vite preview"
    },
    "dependencies": {
@@ -32,6 +34,7 @@
       "globals": "^17.5.0",
       "postcss": "^8.5.13",
       "prettier": "^3.8.3",
+      "sharp": "^0.35.3",
       "tailwindcss": "^4.2.4",
       "typescript": "~6.0.2",
       "typescript-eslint": "^8.58.2",

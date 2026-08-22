@@ -1,5 +1,5 @@
 import { Fragment, useMemo, useState } from 'react'
-import headerSrc from '@/assets/homepage/header.svg'
+import headerSrc from '@/assets/homepage/header.webp'
 import heroCover from '@/assets/hero.png'
 import { ProjectCard, type ProjectCardProps } from '@/components/ProjectCard'
 import { LayoutToggle, SectionHeader, type SectionLayoutMode } from '@/components/SectionHeader'
