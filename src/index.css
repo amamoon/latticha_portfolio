@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Vollkorn:ital@1&family=Yuji+Boku&display=swap');
+
+@import 'tailwindcss';
+
+/* Tailwind v4 reads design tokens here; `tailwind.config.ts` is only used for content paths. */
+@theme {
+   --color-brand-blue: #4797dc;
+   --color-light-blue: #79bbf0;
+   --color-base: #796d62;
+   --color-background: #fafaf7;
+   --color-tag-blue: rgb(42 156 255 / 0.46);
+   --color-tag-light-blue: rgb(129 198 255 / 0.52);
+
+   --font-display: 'Yuji Boku', ui-serif, serif;
+   --font-body: 'Cormorant Garamond', ui-serif, Georgia, serif;
+   --font-italic: 'Vollkorn', ui-serif, Georgia, serif;
+
+   --text-nav: 16px;
+   --text-nav--line-height: 1.8;
+   --text-nav--letter-spacing: 0;
+
+   --text-card-title: 20px;
+   --text-card-title--line-height: normal;
+
+   --text-card-sub: 13.933px;
+   --text-card-sub--line-height: 1.5;
+   --text-card-sub--letter-spacing: -0.1533px;
+
+   --text-card-body: 16px;
+   --text-card-body--line-height: 1.31;
+
+   --text-section: 28px;
+   --text-section--line-height: 0.902;
+
+   --text-logo: 22px;
+   --text-logo--line-height: normal;
+
+   --text-tag: 16.466px;
+   --text-tag--line-height: 1.18;
+   --text-tag--letter-spacing: -0.1811px;
+
+   --shadow-card: 0px 2.904px 1.053px rgb(0 0 0 / 0.26);
+   --radius-card: 5.628px;
+}
+
+@layer base {
+   html {
+      background-color: #fafaf7;
+      color: #796d62;
+   }
+
+   body {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      margin: 0;
+   }
+}
+
+:root {
+   --text: #796d62;
+   --text-h: #08060d;
+   --bg: #fafaf7;
+   --border: #e5e4e7;
+   --code-bg: #f4f3ec;
+   --accent: #aa3bff;
+   --accent-bg: rgba(170, 59, 255, 0.1);
+   --accent-border: rgba(170, 59, 255, 0.5);
+   --social-bg: rgba(244, 243, 236, 0.5);
+   --shadow:
+      rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
+   --sans: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+   --heading: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+   --mono: ui-monospace, Consolas, monospace;
+
+   font: 18px/145% var(--sans);
+   letter-spacing: 0.18px;
+   color-scheme: light dark;
+   color: var(--text);
+   background: var(--bg);
+   font-synthesis: none;
+   text-rendering: optimizeLegibility;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+}
