@@ -107,7 +107,7 @@ export default function GlitchShowHomepage() {
                id="show-homepages"
                className="scroll-mt-24 flex flex-col gap-8"
             >
-               <div className="relative mx-auto flex w-full max-w-[36rem] items-end justify-center px-2 py-4 sm:max-w-none sm:px-0">
+               <div className="relative mx-auto flex w-full max-w-xl items-end justify-center px-2 py-4 sm:max-w-none sm:px-0">
                   <div className="relative z-10 w-[28%] shrink-0 -rotate-2 shadow-[0_8px_24px_rgb(0_0_0/0.12)] sm:w-[26%]">
                      <CaseStudyPlaceholder
                         label="Gaslight District show homepage"
