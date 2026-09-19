@@ -41,18 +41,29 @@ const NAV: readonly CaseStudyNavItem[] = [
       children: [
          { id: 'stakeholder-interview', label: 'Stakeholder Interview' },
          { id: 'competitive-analysis', label: 'Competitive Analysis' },
+         { id: 'outdated-features', label: 'Outdated Features' },
          { id: 'user-interview', label: 'User Interview' },
-         { id: 'persona-customer-journey', label: 'Persona & Customer Journey' },
+         {
+            id: 'persona-customer-journey',
+            label: 'Persona & Customer Journey',
+         },
          { id: 'findings', label: 'Findings' },
       ],
    },
    {
       id: 'design',
       label: 'Design',
-      children: [{ id: 'brand-design', label: 'Brand Design' }],
+      children: [
+         { id: 'brand-design', label: 'Brand Design' },
+         { id: 'prototype', label: 'Prototype' },
+         { id: 'final-design', label: 'Final Design' },
+      ],
    },
-   { id: 'usability-test', label: 'Usability Test' },
-   { id: 'future-considerations', label: 'Future Considerations' },
+   {
+      id: 'review',
+      label: 'Review',
+      children: [{ id: 'final-thoughts', label: 'Final Thoughts' }],
+   },
 ]
 
 const OUTDATED_FEATURES: readonly BulletListItem[] = [
@@ -100,8 +111,9 @@ const OUTDATED_FEATURES: readonly BulletListItem[] = [
 ]
 
 /**
- * Glitch Productions Website case study. Overview and the opening research sections are
- * written; later sections remain scaffolded until their copy and exports are ready.
+ * Glitch Productions Website case study. Overview, research openers, and the Design /
+ * Review stages are written; remaining research blocks and artwork stay as placeholders
+ * until exports are ready.
  */
 export default function GlitchWebsite() {
    return (
@@ -114,9 +126,10 @@ export default function GlitchWebsite() {
          <CaseStudySection eyebrow="Overview" id="overview">
             <CaseStudyHeading id="background">Background</CaseStudyHeading>
             <CaseStudyBody>
-               Glitch Productions is an Australian animation company. Glitch Productions
-               videos have reached over a billion views combined, and merchandise sales are
-               the company&apos;s main source of income.
+               Glitch Productions is an Australian animation company. Glitch
+               Productions videos have reached over a billion views combined,
+               and merchandise sales are the company&apos;s main source of
+               income.
             </CaseStudyBody>
 
             <CaseStudyHeading id="problem">Problem</CaseStudyHeading>
@@ -157,10 +170,14 @@ export default function GlitchWebsite() {
             </CaseStudyBody>
          </CaseStudySection>
 
-         <CaseStudyPillLink href="#solution">Jump to Solution</CaseStudyPillLink>
+         <CaseStudyPillLink href="#solution">
+            Jump to Solution
+         </CaseStudyPillLink>
 
          <CaseStudySection>
-            <CaseStudyHeading id="my-contribution">My Contribution</CaseStudyHeading>
+            <CaseStudyHeading id="my-contribution">
+               My Contribution
+            </CaseStudyHeading>
             <CaseStudyBody>
                {[
                   {
@@ -223,9 +240,9 @@ export default function GlitchWebsite() {
             </CaseStudyExpandable>
 
             <CaseStudyBody>
-               To better my understanding I did an additional Case Study to understand what
-               Fangamer was doing differently on their Mobile website compared to
-               Glitch&apos;s.
+               To better my understanding I did an additional Case Study to
+               understand what Fangamer was doing differently on their Mobile
+               website compared to Glitch&apos;s.
             </CaseStudyBody>
 
             <CaseStudyExpandable label="Read Case Study +">
@@ -292,14 +309,17 @@ export default function GlitchWebsite() {
                </CaseStudyInsightRow>
             </CaseStudyExpandable>
 
-            <CaseStudyHeading>Outdated Features</CaseStudyHeading>
+            <CaseStudyHeading id="outdated-features">
+               Outdated Features
+            </CaseStudyHeading>
             <CaseStudyBody>
-               Previous to this project, I had worked on one of the new store pages for an
-               upcoming show. This led me to encounter the enumerable UI issues with the
-               website that was the result of using an outdated Shopify template that could
-               not match the companies creative goals for its homepages. These issues were
-               small in isolation but accumulated together they made a clunky and
-               underdeveloped website.
+               Previous to this project, I had worked on one of the new store
+               pages for an upcoming show. This led me to encounter the
+               enumerable UI issues with the website that was the result of
+               using an outdated Shopify template that could not match the
+               companies creative goals for its homepages. These issues were
+               small in isolation but accumulated together they made a clunky
+               and underdeveloped website.
             </CaseStudyBody>
 
             <CaseStudySubHeading tone="light">
@@ -308,7 +328,9 @@ export default function GlitchWebsite() {
 
             <CaseStudyBulletList items={OUTDATED_FEATURES} />
 
-            <CaseStudyHeading id="user-interview">User Interview</CaseStudyHeading>
+            <CaseStudyHeading id="user-interview">
+               User Interview
+            </CaseStudyHeading>
             <CaseStudyPlaceholder label="User interview copy and artwork" />
 
             <CaseStudyHeading id="persona-customer-journey">
@@ -340,9 +362,63 @@ export default function GlitchWebsite() {
             </CaseStudyBody>
 
             <CaseStudyExpandable label="Brand Design Journey +">
+               <CaseStudyBody>
+                  With our base understanding of Glitch&apos;s branding and logo
+                  (redesigned by Nathan Gamson) I took inspiration from Glitch
+                  X, the companies annual report of sorts to their audience on
+                  what the company has been working on over the past year. The
+                  aesthetics for this were inspired by Japanese Magazines and
+                  rounded edged Sci-Fi visuals. Noteable in the white background
+                  with pastel purple and blue glitch effects.
+               </CaseStudyBody>
+
                <CaseStudyPlaceholder
-                  label="Brand design journey process boards and iterations"
+                  label="Glitch X / Japanese magazine inspiration board"
                   ratio="966 / 480"
+               />
+
+               <CaseStudyBody>
+                  {[
+                     {
+                        text: 'Note the shapes in the above background proved to be too abstract and unrelated to how Glitch had evolved. ',
+                     },
+                     {
+                        text: 'These shapes originally taking inspiration from a gaming controller. Now we wanted to skew the visuals into something that encourages ideas of creativity.',
+                        marker: true,
+                     },
+                  ]}
+               </CaseStudyBody>
+
+               <CaseStudyPlaceholder
+                  label="Rejected abstract / controller-inspired background explorations"
+                  ratio="966 / 420"
+               />
+
+               <CaseStudyBody>
+                  {[
+                     {
+                        text: 'I created various variants of the glitch background so we could narrow in on the simplest visual iconography Glitch could use to place their characters on. ',
+                     },
+                     {
+                        text: 'The grids of Glitch X\u2019s branding were key in echoing a \u2018canvas\u2019 like visual that could be used within the website.',
+                        marker: true,
+                     },
+                  ]}
+               </CaseStudyBody>
+
+               <CaseStudyPlaceholder
+                  label="Grid background variants narrowing toward the final canvas"
+                  ratio="966 / 480"
+               />
+
+               <CaseStudyPlaceholder
+                  label="Additional brand journey board: colour and glitch treatments"
+                  ratio="966 / 480"
+               />
+
+               <CaseStudyPlaceholder
+                  label="Additional brand journey board: character placement tests"
+                  ratio="966 / 520"
                />
             </CaseStudyExpandable>
 
@@ -367,18 +443,77 @@ export default function GlitchWebsite() {
                label="4x4 glitch grid with product card examples on purple border"
                ratio="966 / 520"
             />
+
+            <CaseStudyHeading id="prototype">Prototype</CaseStudyHeading>
+            <CaseStudyBody>
+               {[
+                  {
+                     text: 'With the brand canvas locked, I moved into prototyping the storefront experience — ',
+                  },
+                  {
+                     text: 'homepage catalogue, product cards on the new grid, and key shopping flows — so development could see how the system would scale across shows.',
+                     marker: true,
+                  },
+               ]}
+            </CaseStudyBody>
+
+            <CaseStudyPlaceholder
+               label="Prototype screens: catalogue homepage and product cards on the 4x4 grid"
+               ratio="966 / 720"
+            />
+
+            <CaseStudyPlaceholder
+               label="Prototype screens: product page and cart / checkout overlays"
+               ratio="966 / 700"
+            />
+
+            <CaseStudyHeading id="final-design">Final Design</CaseStudyHeading>
+            <CaseStudyBody>
+               {[
+                  {
+                     text: 'In October 2025, Glitch Productions launched a new website that integrated all the separate shows website homepages into a cohesive catalogue that reinforced Glitch\u2019s brand identity. ',
+                  },
+                  {
+                     text: 'It\u2019s quality now met and exceeded the standards of other merchandise websites.',
+                     marker: true,
+                  },
+                  {
+                     text: ' A web design company (SpicyTiger) was contracted to develop the website and lead its integration into the Shopify back-end. This insured inventory remained in sync with the new design and that Glitch\u2019s merchandise team could continue to add changes to the website after hand-off from the contractors.',
+                  },
+               ]}
+            </CaseStudyBody>
+
+            <CaseStudyPlaceholder
+               label="Final live storefront screenshots: catalogue homepage and show filters"
+               ratio="966 / 720"
+            />
+
+            <CaseStudyPlaceholder
+               label="Final product page and merchandising UI on the shipped site"
+               ratio="966 / 420"
+            />
          </CaseStudySection>
 
          <CaseStudyDivider />
 
-         <CaseStudySection eyebrow="Usability Test" id="usability-test">
-            <CaseStudyPlaceholder label="Usability test copy and results" />
-         </CaseStudySection>
-
-         <CaseStudyDivider />
-
-         <CaseStudySection eyebrow="Future Considerations" id="future-considerations">
-            <CaseStudyPlaceholder label="Future considerations copy" />
+         <CaseStudySection eyebrow="Review" id="review">
+            <CaseStudyHeading id="final-thoughts">
+               Final Thoughts
+            </CaseStudyHeading>
+            <CaseStudyBody>
+               {[
+                  {
+                     text: 'The websites redesign was successful in updating the store page to industry e-commerce standards whilst giving a fresh look to the Glitch brand. ',
+                  },
+                  {
+                     text: 'Not all our suggestions had made it through the websites five months in development.',
+                     marker: true,
+                  },
+                  {
+                     text: ' Whilst the wants on the customer end were encouraged, the website prioritised the ease of upload on the back-end for the logistics team on the merchandise side. This meant removing unique homepages for each show and organising them into filter modes. In a categorical sense this was the best move for a company that had monthly campaigns - and at this point, more than one campaign per month. The creative aspects such as a unique descriptor in the product page or a card to showcase bound features was not implemented this time around, but I hope it will be taken on in the websites future redesign.',
+                  },
+               ]}
+            </CaseStudyBody>
          </CaseStudySection>
       </CaseStudyLayout>
    )

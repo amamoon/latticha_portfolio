@@ -1,6 +1,21 @@
 import competitor1Src from '@/assets/projects/nontre-redesign/competitor-1.webp'
 import competitor2Src from '@/assets/projects/nontre-redesign/competitor-2.webp'
 import competitor3Src from '@/assets/projects/nontre-redesign/competitor-3.webp'
+import personaSrc from '@/assets/projects/nontre-redesign/Frame 362.png'
+import desktopNavSrc from '@/assets/projects/nontre-redesign/Frame 370.png'
+import mobileNavSrc from '@/assets/projects/nontre-redesign/Frame 371.png'
+import usabilityFirstImpressionSrc from '@/assets/projects/nontre-redesign/Group 51.png'
+import usabilityUspSrc from '@/assets/projects/nontre-redesign/Group 51-1.png'
+import ideationBoardSrc from '@/assets/projects/nontre-redesign/Group 57.png'
+import annotatedWireframeSrc from '@/assets/projects/nontre-redesign/Group 59.png'
+import wireframeDirectionsSrc from '@/assets/projects/nontre-redesign/Group 60.png'
+import loFiDesignsSrc from '@/assets/projects/nontre-redesign/Group 61.png'
+import solutionHomepageSrc from '@/assets/projects/nontre-redesign/Group 62.png'
+import solutionProductSrc from '@/assets/projects/nontre-redesign/Group 63.png'
+import breakdownHeroSrc from '@/assets/projects/nontre-redesign/Group 64.png'
+import breakdownScreen2Src from '@/assets/projects/nontre-redesign/Group 64-1.png'
+import breakdownScreen3Src from '@/assets/projects/nontre-redesign/Group 64-2.png'
+import breakdownDesktopSrc from '@/assets/projects/nontre-redesign/Group 64-3.png'
 import heroSrc from '@/assets/projects/nontre-redesign/hero.webp'
 import overviewSiteSrc from '@/assets/projects/nontre-redesign/overview-site.webp'
 import solutionMockupsSrc from '@/assets/projects/nontre-redesign/solution-mockups.webp'
@@ -12,8 +27,8 @@ import {
    CaseStudyImageRow,
    CaseStudyInsightList,
    CaseStudyJourneyMap,
-   CaseStudyPersona,
    CaseStudyPillLink,
+   CaseStudyPlaceholder,
    CaseStudyThemeGrid,
    QuoteList,
    QuoteText,
@@ -21,8 +36,6 @@ import {
    type JourneyRow,
    type LabelledImage,
    type NumberedInsight,
-   type PersonaFact,
-   type PersonaParagraph,
    type ThemeCard,
 } from '@/components/case-study/CaseStudyBlocks'
 import { CaseStudyLayout } from '@/components/case-study/CaseStudyLayout'
@@ -60,7 +73,28 @@ const NAV: readonly CaseStudyNavItem[] = [
          { id: 'stakeholder-interview', label: 'Stakeholder Interview' },
          { id: 'competitive-analysis', label: 'Competitive Analysis' },
          { id: 'user-interviews', label: 'User Interviews' },
-         { id: 'persona-journey-map', label: 'Persona & Journey Map' },
+         { id: 'persona-journey-map', label: 'Persona & Customer Journey' },
+         { id: 'defined-design-goals', label: 'Defined Design Goals' },
+      ],
+   },
+   {
+      id: 'design',
+      label: 'Design',
+      children: [
+         { id: 'ideation', label: 'Ideation' },
+         { id: 'wireframes', label: 'Wireframes' },
+         { id: 'lo-fidelity-designs', label: 'Lo-Fidelity Designs' },
+         { id: 'navigation', label: 'Navigation' },
+         { id: 'design-solution', label: 'Solution' },
+         { id: 'breakdown', label: 'Breakdown' },
+      ],
+   },
+   {
+      id: 'evaluation',
+      label: 'Evaluation',
+      children: [
+         { id: 'usability-test', label: 'Usability Test' },
+         { id: 'takeaways', label: 'Takeaways' },
       ],
    },
 ]
@@ -172,27 +206,108 @@ const ANALYSIS_POINTS: readonly BulletListItem[] = [
    },
 ]
 
-/** Quick facts for the interview persona, shown at the top of her card. */
-const ADINA_FACTS: readonly PersonaFact[] = [
-   { label: 'Age', value: '43' },
-   { label: 'Occupation', value: 'Marketing Manager' },
-   { label: 'Location', value: 'Perth, Aus' },
-   { label: 'Type', value: '“Full time working Mum”' },
+/** Lo-fi critique: strengths carried into later iterations. */
+const WHAT_WORKS: readonly BulletListItem[] = [
+   {
+      segments: [{ text: 'Proportions adjusted to fit mobile UI' }],
+   },
+   {
+      segments: [
+         {
+            text: 'Fragrance collection was an interesting way of capturing nontre scent ‘moments’ as a unique selling point.',
+         },
+      ],
+   },
+   {
+      segments: [
+         {
+            text: 'Advertising Nontre’s hidden offers of sustainability in ‘Earth-wise’ and prompting them with a ‘Get started’ kit.',
+         },
+      ],
+      subItems: [
+         [
+            {
+               text: 'This was something I didn’t continue with as Nontre didn’t have enough products to justify a ‘get started’ kit section.',
+               marker: true,
+            },
+         ],
+      ],
+   },
 ]
 
-/** Named paragraphs (About / Goals / Frustrations) for the interview persona. */
-const ADINA_PARAGRAPHS: readonly PersonaParagraph[] = [
+/** Lo-fi critique: feedback that reshaped the next pass. */
+const WHAT_DOESNT: readonly BulletListItem[] = [
    {
-      label: 'About',
-      text: 'Wife of two kids who loves pilates and walking her dog. As soon as she comes home after work, she does the chores for her whole family.',
+      segments: [
+         {
+            text: 'Some teammates didn’t like having a video in hero image',
+         },
+      ],
    },
    {
-      label: 'Goals',
-      text: 'She is looking for things to elevate her home and give it the luxury feel that she’s been missing. She’s also been noticing a need to maintain her skin. Adina is always looking for a time to relax.',
+      segments: [
+         {
+            text: 'Including all product options on the homepage seemed too overwhelming on mobile.',
+         },
+      ],
    },
    {
-      label: 'Frustrations',
-      text: 'She can never quite get the same feel, or close to the same feel of ambiance and relaxation that you get at a spa, in her home. Nor does she have the time.',
+      segments: [
+         {
+            text: 'Separating Best Seller sections for Laundry, Home Care and Hand & Body was difficult to achieve as there wasn’t even distribution of products across categories',
+         },
+      ],
+   },
+]
+
+/** IA notes from reworking the storefront navigation. */
+const NAVIGATION_NOTES: readonly BulletListItem[] = [
+   {
+      segments: [
+         { text: 'Subheadings', bold: true },
+         {
+            text: ' - simplified the subheadings since the website ones were too long and headings are meant to be simple',
+         },
+      ],
+   },
+   {
+      segments: [
+         { text: 'Shop all', bold: true },
+         { text: " - Don't see the point of having this button" },
+      ],
+   },
+   {
+      segments: [
+         {
+            text: "Removed 'car diffuser' subheading as it stuck out quite a bit",
+            bold: true,
+         },
+         {
+            text: ' - however, if further items are added to this section. A car + Travel section could definitely be created.',
+         },
+      ],
+   },
+   {
+      segments: [
+         { text: "Decluttering 'home' section", bold: true },
+         { text: ' - placing hand wash in hand and body care' },
+      ],
+   },
+   {
+      segments: [
+         { text: 'Refills', bold: true },
+         {
+            text: " - there is enough product to justify a refill and to emphasise the sustainability image you uphold, it's good to showcase this",
+         },
+      ],
+   },
+   {
+      segments: [
+         { text: 'Kits', bold: true },
+         {
+            text: ' - there are enough kits in your product range to highlight it alongside gifting',
+         },
+      ],
    },
 ]
 
@@ -465,6 +580,11 @@ export default function NontreRedesign() {
                ]}
             </CaseStudyBody>
 
+            <CaseStudyPlaceholder
+               label="Stakeholder kickoff board / workshop artifacts"
+               ratio="16 / 9"
+            />
+
             <CaseStudyHeading id="competitive-analysis">
                Competitive Analysis
             </CaseStudyHeading>
@@ -550,10 +670,11 @@ export default function NontreRedesign() {
                website.
             </CaseStudyBody>
 
-            <CaseStudyPersona
-               name="Adina"
-               facts={ADINA_FACTS}
-               paragraphs={ADINA_PARAGRAPHS}
+            <CaseStudyFigure
+               src={personaSrc}
+               alt="Adina persona card: full-time working mum from Perth"
+               width={1931}
+               height={983}
             />
 
             <CaseStudyJourneyMap
@@ -564,11 +685,287 @@ export default function NontreRedesign() {
          </CaseStudySection>
 
          <CaseStudySection>
+            <CaseStudyHeading id="defined-design-goals">
+               Defined Design Goals
+            </CaseStudyHeading>
             <CaseStudySubHeading>
                Our findings were sorted into 4 key themes:
             </CaseStudySubHeading>
             <CaseStudyThemeGrid items={THEMES} />
             <CaseStudyInsightList items={INSIGHTS} />
+         </CaseStudySection>
+
+         <CaseStudyDivider />
+
+         <CaseStudySection eyebrow="Design" id="design">
+            <CaseStudyHeading id="ideation">Ideation</CaseStudyHeading>
+            <CaseStudyBody>
+               With that inspiration i was able to brainstorm key features I
+               wanted in the redesign. Also aspects that I would later push onto
+               the product page.
+            </CaseStudyBody>
+         </CaseStudySection>
+
+         <CaseStudyFigure
+            src={ideationBoardSrc}
+            alt="Ideation board of homepage priorities for the Nontre redesign"
+            width={1931}
+            height={970}
+         />
+
+         <CaseStudySection>
+            <CaseStudyHeading id="wireframes">Wireframes</CaseStudyHeading>
+            <CaseStudyBody>
+               With that inspiration i was able to brainstorm key features I
+               wanted in the redesign. Also aspects that I would later push onto
+               the product page.
+            </CaseStudyBody>
+         </CaseStudySection>
+
+         <CaseStudyFigure
+            src={annotatedWireframeSrc}
+            alt="Annotated sketch of the existing Nontre homepage with emphasis and move-up notes"
+            width={1317}
+            height={1052}
+         />
+
+         <CaseStudyFigure
+            src={wireframeDirectionsSrc}
+            alt="Three mobile wireframe directions explored for the homepage"
+            width={914}
+            height={1557}
+         />
+
+         <CaseStudySection>
+            <CaseStudySubHeading tone="light">Homepage</CaseStudySubHeading>
+            <CaseStudyBody>
+               {[
+                  {
+                     text: 'Most of the changes were updating the design to a more modern layout that aligns with the user’s current experience of e-commerce websites. ',
+                  },
+                  {
+                     text: 'The main points of interest on the Home Page was emphasising “Scent Profiles” and “Earth-wise” (re-fills) that justifies Nontre’s product premium and their sustainability goals.',
+                     marker: true,
+                  },
+               ]}
+            </CaseStudyBody>
+
+            <CaseStudySubHeading tone="light">Product Page</CaseStudySubHeading>
+            <CaseStudyBody>
+               {[
+                  {
+                     text: 'The product page required a few changes to become more intuitive as a regular e-commerce website and ',
+                  },
+                  {
+                     text: 'I placed an emphasis on the use of fragrance within their products and their ‘subscribe & save’ feature.',
+                     marker: true,
+                  },
+                  {
+                     text: ' A note from the interviews included emphasising this subscribe and save option.',
+                  },
+               ]}
+            </CaseStudyBody>
+            <CaseStudyBody>
+               {[
+                  {
+                     text: 'These two features were implemented in the redesign of their 2025 website.',
+                     marker: true,
+                  },
+               ]}
+            </CaseStudyBody>
+            <CaseStudyBody>
+               After showcasing my wireframes to the class I got some good
+               feedback that helped me narrow down the designs.
+            </CaseStudyBody>
+         </CaseStudySection>
+
+         <CaseStudySection>
+            <CaseStudyHeading id="lo-fidelity-designs">
+               Lo-Fidelity Design
+            </CaseStudyHeading>
+            <CaseStudyBody>
+               With that inspiration, I was able to brainstorm key features I
+               wanted in the redesign. As well as aspects that I would later
+               push onto the product page.
+            </CaseStudyBody>
+         </CaseStudySection>
+
+         <CaseStudyFigure
+            src={loFiDesignsSrc}
+            alt="Lo-fidelity mobile screens for homepage categories, best sellers, and fragrance collection"
+            width={1320}
+            height={1949}
+         />
+
+         <CaseStudySection>
+            <CaseStudySubHeading tone="light">What Works</CaseStudySubHeading>
+            <CaseStudyBulletList items={WHAT_WORKS} />
+
+            <CaseStudySubHeading tone="light">What Doesn’t</CaseStudySubHeading>
+            <CaseStudyBulletList items={WHAT_DOESNT} />
+         </CaseStudySection>
+
+         <CaseStudySection>
+            <CaseStudyHeading id="navigation">Navigation</CaseStudyHeading>
+            <CaseStudyBody>
+               {[
+                  {
+                     text: 'The navigation bar of the website was very wordy and complex providing a difficult user experience. ',
+                  },
+                  {
+                     text: 'Categorising the items into manageable mental chunks was key in allowing users to have a mental model of what Nontre provided as a company and pinpointing their specific USPs',
+                     marker: true,
+                  },
+                  { text: '.' },
+               ]}
+            </CaseStudyBody>
+            <CaseStudyBody>
+               A spreadsheet of all the items into fragrance, use and the rooms
+               they’re used within assisted in ascertaining hierarchy.
+            </CaseStudyBody>
+
+            <CaseStudyBulletList items={NAVIGATION_NOTES} />
+
+            <CaseStudySubHeading tone="light">
+               Final Version
+            </CaseStudySubHeading>
+            <CaseStudyBody>
+               Mobile and desktop navigation after the information architecture
+               pass.
+            </CaseStudyBody>
+         </CaseStudySection>
+
+         <CaseStudyFigure
+            src={mobileNavSrc}
+            alt="Final mobile navigation: top-level categories and laundry submenu"
+            width={1938}
+            height={1051}
+         />
+
+         <CaseStudyFigure
+            src={desktopNavSrc}
+            alt="Final desktop navigation with laundry dropdown open"
+            width={1936}
+            height={883}
+         />
+
+         <CaseStudySection>
+            <CaseStudyHeading id="design-solution">Solution</CaseStudyHeading>
+            <CaseStudyBody>
+               {[
+                  {
+                     text: 'The final homepage and product page brought the research goals into a cohesive mobile-first storefront: ',
+                  },
+                  {
+                     text: 'scent as a primary selling point, clearer category entry points, and sustainability surfaced through Earth-wise and refills.',
+                     marker: true,
+                  },
+               ]}
+            </CaseStudyBody>
+         </CaseStudySection>
+
+         <CaseStudyFigure
+            src={solutionHomepageSrc}
+            alt="Final hi-fi mobile homepage: joyful moments hero, categories, fragrance, and earth-wise sections"
+            width={1940}
+            height={1755}
+         />
+
+         <CaseStudyFigure
+            src={solutionProductSrc}
+            alt="Final hi-fi mobile product page for Royal Blossom hand wash with subscribe and save"
+            width={1936}
+            height={899}
+         />
+
+         <CaseStudySection>
+            <CaseStudyHeading id="breakdown">Breakdown</CaseStudyHeading>
+            <CaseStudyBody>
+               A closer look at the key screens that carried the design
+               outcomes: hero storytelling, category discovery, and the refined
+               storefront header.
+            </CaseStudyBody>
+         </CaseStudySection>
+
+         <CaseStudyFigure
+            src={breakdownHeroSrc}
+            alt="Hero breakdown: joyful moments lifestyle shot with Australian-made and cruelty-free badges"
+            width={718}
+            height={1231}
+         />
+
+         <CaseStudyFigure
+            src={breakdownScreen2Src}
+            alt="Homepage breakdown screen highlighting category and product storytelling"
+            width={718}
+            height={1211}
+         />
+
+         <CaseStudyFigure
+            src={breakdownScreen3Src}
+            alt="Homepage breakdown screen highlighting fragrance and earth-wise modules"
+            width={718}
+            height={1211}
+         />
+
+         <CaseStudyFigure
+            src={breakdownDesktopSrc}
+            alt="Desktop homepage breakdown: header, joyful moments hero, and World of Nontre categories"
+            width={748}
+            height={775}
+         />
+
+         <CaseStudyDivider />
+
+         <CaseStudySection eyebrow="Evaluation" id="evaluation">
+            <CaseStudyHeading id="usability-test">
+               Usability Test
+            </CaseStudyHeading>
+            <CaseStudyBody>
+               After the redesign directions were in place, we ran usability
+               sessions to check first impressions of the catalogue and which
+               brand values were landing with the target audience.
+            </CaseStudyBody>
+         </CaseStudySection>
+
+         <CaseStudyFigure
+            src={usabilityFirstImpressionSrc}
+            alt="Usability test first impression results: laundry/home and beauty each at 40%"
+            width={1267}
+            height={716}
+         />
+
+         <CaseStudyFigure
+            src={usabilityUspSrc}
+            alt="Usability test USP results: wellbeing 60%, premium 30%, sustainable 10%"
+            width={1267}
+            height={718}
+         />
+
+         <CaseStudySection>
+            <CaseStudyHeading id="takeaways">Takeaways</CaseStudyHeading>
+            <CaseStudyBody>
+               {[
+                  {
+                     text: 'Participants recognised Nontre most clearly through ',
+                  },
+                  {
+                     text: 'laundry/home care and beauty, with wellbeing as the strongest USP signal.',
+                     marker: true,
+                  },
+                  {
+                     text: ' Sustainability still needed more deliberate surface area on the storefront — which reinforced keeping Earth-wise and refills visible in the final IA.',
+                  },
+               ]}
+            </CaseStudyBody>
+            <CaseStudyBody>
+               {[
+                  {
+                     text: 'Mobile-first layout, scent-led merchandising, and a simpler navigation model were the changes most aligned with both stakeholder priorities and what testers could parse quickly.',
+                     marker: true,
+                  },
+               ]}
+            </CaseStudyBody>
          </CaseStudySection>
       </CaseStudyLayout>
    )
