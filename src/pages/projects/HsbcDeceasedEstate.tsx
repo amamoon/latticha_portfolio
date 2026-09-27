@@ -13,7 +13,6 @@ import {
    CaseStudyFigure,
    CaseStudyIssuesTable,
    CaseStudyPillLink,
-   CaseStudyPlaceholder,
    QuoteBulletList,
    QuoteText,
    type BulletListItem,
