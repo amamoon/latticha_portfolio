@@ -1,6 +1,13 @@
 import { useEffect, useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import { Logo } from '@/components/Logo'
+
+/** Home section anchors under PROJECTS in the primary nav. */
+const PROJECT_SECTION_LINKS = [
+   { hash: 'ux-design', label: 'UX Design' },
+   { hash: 'merchandise-design', label: 'Merchandise Design' },
+   { hash: 'branding', label: 'Branding' },
+] as const
 
 /** Floating menu width (px). */
 export const sideNavWidthPx = 203
@@ -58,6 +65,9 @@ const activeTop = 'text-light-blue'
  */
 export function SideNav({ className = '' }: SideNavProps) {
    const [open, setOpen] = useState(false)
+   const { pathname, hash } = useLocation()
+   const activeProjectHash =
+      pathname === '/' && hash.startsWith('#') ? hash.slice(1) : null
 
    useEffect(() => {
       if (!open) return
@@ -134,48 +144,26 @@ export function SideNav({ className = '' }: SideNavProps) {
                   <NavRule />
 
                   <ul className="m-0 flex min-h-0 list-none flex-col p-0">
-                     <li>
-                        <NavLink
-                           to="/projects/ux-design"
-                           end
-                           onClick={close}
-                           className={({ isActive }) =>
-                              [subLinkClass, isActive ? activeSub : '']
-                                 .filter(Boolean)
-                                 .join(' ')
-                           }
+                     {PROJECT_SECTION_LINKS.map(({ hash: sectionId, label }, index) => (
+                        <li
+                           key={sectionId}
+                           className={index === 0 ? undefined : 'flex flex-col'}
                         >
-                           UX Design
-                        </NavLink>
-                     </li>
-                     <li className="flex flex-col">
-                        <NavRule />
-                        <NavLink
-                           to="/projects/merchandise-design"
-                           onClick={close}
-                           className={({ isActive }) =>
-                              [subLinkClass, isActive ? activeSub : '']
+                           {index > 0 ? <NavRule /> : null}
+                           <Link
+                              to={`/#${sectionId}`}
+                              onClick={close}
+                              className={[
+                                 subLinkClass,
+                                 activeProjectHash === sectionId ? activeSub : '',
+                              ]
                                  .filter(Boolean)
-                                 .join(' ')
-                           }
-                        >
-                           Merchandise Design
-                        </NavLink>
-                     </li>
-                     <li className="flex flex-col">
-                        <NavRule />
-                        <NavLink
-                           to="/projects/branding"
-                           onClick={close}
-                           className={({ isActive }) =>
-                              [subLinkClass, isActive ? activeSub : '']
-                                 .filter(Boolean)
-                                 .join(' ')
-                           }
-                        >
-                           Branding
-                        </NavLink>
-                     </li>
+                                 .join(' ')}
+                           >
+                              {label}
+                           </Link>
+                        </li>
+                     ))}
                   </ul>
 
                   <NavRule />

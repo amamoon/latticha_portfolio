@@ -1,7 +1,9 @@
+import heroBannerSrc from '@/assets/projects/glitch-merchandise/banner.webp'
+import productGallerySrc from '@/assets/projects/glitch-merchandise/merch.webp'
 import {
    CaseStudyBody,
+   CaseStudyFigure,
    CaseStudyPillLink,
-   CaseStudyPlaceholder,
 } from '@/components/case-study/CaseStudyBlocks'
 import { CaseStudyLayout } from '@/components/case-study/CaseStudyLayout'
 import type { CaseStudyMetaItem } from '@/components/case-study/CaseStudyMetaBar'
@@ -12,7 +14,7 @@ import {
    CaseStudySection,
 } from '@/components/case-study/CaseStudySection'
 
-const GLITCH_STORE_URL = 'https://store.glitchproductions.com/'
+const GLITCH_STORE_URL = 'https://glitchproductions.store/'
 
 const META: readonly CaseStudyMetaItem[] = [
    { label: 'Client', value: 'Glitch Productions' },
@@ -20,8 +22,6 @@ const META: readonly CaseStudyMetaItem[] = [
    { label: 'Team', value: 'Consumer Products' },
    { label: 'Activities', value: 'Research, Product Design, Tech Specs' },
 ]
-
-const PRODUCT_GALLERY_COUNT = 16
 
 const NAV: readonly CaseStudyNavItem[] = [
    {
@@ -47,6 +47,7 @@ export default function GlitchMerchandise() {
    return (
       <CaseStudyLayout
          title="Glitch Merchandise"
+         heroSrc={heroBannerSrc}
          heroAlt="Glitch Merchandise title banner"
          meta={META}
          nav={NAV}
@@ -86,17 +87,13 @@ export default function GlitchMerchandise() {
          <CaseStudyDivider />
 
          <CaseStudySection eyebrow="Design" id="design">
-            <div
-               id="product-gallery"
-               className="scroll-mt-24 grid grid-cols-4 gap-2 sm:gap-3"
-            >
-               {Array.from({ length: PRODUCT_GALLERY_COUNT }, (_, index) => (
-                  <CaseStudyPlaceholder
-                     key={index}
-                     label={`Product ${index + 1}`}
-                     ratio="1 / 1"
-                  />
-               ))}
+            <div id="product-gallery" className="scroll-mt-24">
+               <CaseStudyFigure
+                  src={productGallerySrc}
+                  alt="Product gallery: plushes, apparel, vinyl, enamel pins, stationery, and packaging from the Glitch Productions store"
+                  width={1391}
+                  height={2074}
+               />
             </div>
          </CaseStudySection>
       </CaseStudyLayout>

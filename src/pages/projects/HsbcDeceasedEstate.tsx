@@ -1,7 +1,16 @@
+import heroBannerSrc from '@/assets/projects/hsbc-deceased-estate/Frame 5.webp'
+import affinityMapSrc from '@/assets/projects/hsbc-deceased-estate/HSBC_Stakeholder Interview1_Affinity Map 1.webp'
+import competitiveAnalysisSrc from '@/assets/projects/hsbc-deceased-estate/Group 51-2.webp'
+import currentNotificationSrc from '@/assets/projects/hsbc-deceased-estate/Group 51.webp'
+import existingBereavementSrc from '@/assets/projects/hsbc-deceased-estate/Group 51-1.webp'
+import finalDesignSrc from '@/assets/projects/hsbc-deceased-estate/final-hifi-screens.webp'
+import loFiWireframesSrc from '@/assets/projects/hsbc-deceased-estate/Group 34.webp'
+import wireframeStoryboardsSrc from '@/assets/projects/hsbc-deceased-estate/wireframe-storyboards.webp'
 import {
    CaseStudyBody,
    CaseStudyBulletList,
    CaseStudyCallout,
+   CaseStudyFigure,
    CaseStudyIssuesTable,
    CaseStudyPillLink,
    CaseStudyPlaceholder,
@@ -124,9 +133,6 @@ const NAV: readonly CaseStudyNavItem[] = [
          { id: 'base-insights', label: 'Base Insights' },
          { id: 'stakeholder-interview', label: 'Stakeholder Interview' },
          { id: 'competitive-analysis', label: 'Competitive Analysis' },
-         { id: 'user-interview', label: 'User Interview' },
-         { id: 'persona-customer-journey', label: 'Persona & Customer Journey' },
-         { id: 'findings', label: 'Findings' },
       ],
    },
    {
@@ -148,6 +154,7 @@ export default function HsbcDeceasedEstate() {
    return (
       <CaseStudyLayout
          title="HSBC Deceased Estate"
+         heroSrc={heroBannerSrc}
          heroAlt="HSBC Deceased Estate title banner"
          meta={META}
          nav={NAV}
@@ -156,10 +163,11 @@ export default function HsbcDeceasedEstate() {
             <CaseStudyHeading id="background">Background</CaseStudyHeading>
             <CaseStudyBody>
                HSBC is one of the world’s largest banking and financial services
-               organizations. They serve more than 40 million customers through our global
-               businesses: Wealth and Personal Banking, Commercial Banking, and Global
-               Banking &amp; Markets. HSBC’s network covers 64 countries and territories in
-               Europe, Asia, the Middle East and Africa, North America and Latin America.
+               organizations. They serve more than 40 million customers through
+               our global businesses: Wealth and Personal Banking, Commercial
+               Banking, and Global Banking &amp; Markets. HSBC’s network covers
+               64 countries and territories in Europe, Asia, the Middle East and
+               Africa, North America and Latin America.
             </CaseStudyBody>
 
             <CaseStudyHeading id="problem">Problem</CaseStudyHeading>
@@ -168,7 +176,10 @@ export default function HsbcDeceasedEstate() {
                   {
                      text: 'When a HSBC customer has passed, their Deceased Estate (DE) must be notified to the bank by someone close to them. However, ',
                   },
-                  { text: 'the current process is completely offline.', marker: true },
+                  {
+                     text: 'the current process is completely offline.',
+                     marker: true,
+                  },
                   {
                      text: ' It relies on Deceased Estate notifiers submitting all required information physically and once submitted they had ',
                   },
@@ -197,7 +208,10 @@ export default function HsbcDeceasedEstate() {
                   {
                      text: 'Internally, the shortsighted-ness of this update halts staff workflow as they wait upon the notifier’s submission. ',
                   },
-                  { text: 'Stretching out the process for handling a DE.', marker: true },
+                  {
+                     text: 'Stretching out the process for handling a DE.',
+                     marker: true,
+                  },
                   {
                      text: ' There is no designated case manager to track the status of assets as they are processed in different departments, relying on a network of cross-departmental calls when the notifier asks for an update. On an interpersonal level, ',
                   },
@@ -211,12 +225,16 @@ export default function HsbcDeceasedEstate() {
                ]}
             </CaseStudyBody>
 
-            <QuoteText>Current HSBC deceased customer notification form</QuoteText>
+            <QuoteText>
+               Current HSBC deceased customer notification form
+            </QuoteText>
          </CaseStudySection>
 
-         <CaseStudyPlaceholder
-            label="Screenshot: current HSBC bereavement support page and notification form"
-            ratio="966 / 1200"
+         <CaseStudyFigure
+            src={currentNotificationSrc}
+            alt="HSBC’s existing deceased-estate notification form and bereavement support page"
+            width={650}
+            height={674}
          />
 
          <CaseStudySection>
@@ -232,14 +250,14 @@ export default function HsbcDeceasedEstate() {
             </CaseStudyBody>
 
             <CaseStudyCallout title="1. Case Management:">
-               It was a system for communicating a case&apos;s current status and its next
-               steps &amp; actions.
+               It was a system for communicating a case&apos;s current status
+               and its next steps &amp; actions.
             </CaseStudyCallout>
 
             <CaseStudyCallout title="2. Document Management:">
-               This aims to simplify submission of documents, increase visibility and
-               provide status insights based on progress such as &ldquo;Submitted,
-               Reviewed, Approved&rdquo;.
+               This aims to simplify submission of documents, increase
+               visibility and provide status insights based on progress such as
+               &ldquo;Submitted, Reviewed, Approved&rdquo;.
             </CaseStudyCallout>
 
             <CaseStudyBody>
@@ -256,26 +274,34 @@ export default function HsbcDeceasedEstate() {
 
             <CaseStudyHeading>Design Outcome</CaseStudyHeading>
             <CaseStudyBody>
-               The final design was in the form of a webpage which can be accessed via the
-               HSBC website and app. It focuses on keeping notifiers informed about the
-               timeline of the deceased estate process and being responsive to when document
-               submission is required.
+               The final design was in the form of a webpage which can be
+               accessed via the HSBC website and app. It focuses on keeping
+               notifiers informed about the timeline of the deceased estate
+               process and being responsive to when document submission is
+               required.
             </CaseStudyBody>
 
-            <CaseStudyHeading id="my-contribution">My Contribution</CaseStudyHeading>
+            <CaseStudyHeading id="my-contribution">
+               My Contribution
+            </CaseStudyHeading>
             <CaseStudyBody>
-               I was in a team of 12 people who worked in parallel through each step of the
-               design process to come up with unique interpretations of the solution in the
-               hopes of being chosen as the final design to be implemented.
+               I was in a team of 12 people who worked in parallel through each
+               step of the design process to come up with unique interpretations
+               of the solution in the hopes of being chosen as the final design
+               to be implemented.
             </CaseStudyBody>
          </CaseStudySection>
 
-         <CaseStudyPillLink href="#solution">Jump to Solution</CaseStudyPillLink>
+         <CaseStudyPillLink href="#solution">
+            Jump to Solution
+         </CaseStudyPillLink>
 
          <CaseStudyDivider />
 
          <CaseStudySection eyebrow="Research" id="research">
-            <CaseStudyHeading id="base-insights">Base Insights</CaseStudyHeading>
+            <CaseStudyHeading id="base-insights">
+               Base Insights
+            </CaseStudyHeading>
             <CaseStudyBody>
                {[
                   {
@@ -300,10 +326,11 @@ export default function HsbcDeceasedEstate() {
                Solution: Customer Portal
             </p>
             <CaseStudyBody>
-               Currently, communication relies on phone calls and emails, which can lead to
-               delays, miscommunication, and a lack of transparency for customers. While
-               these methods allow one-to-one communication, they fall short when it comes
-               to providing real-time updates and self-service features.
+               Currently, communication relies on phone calls and emails, which
+               can lead to delays, miscommunication, and a lack of transparency
+               for customers. While these methods allow one-to-one
+               communication, they fall short when it comes to providing
+               real-time updates and self-service features.
             </CaseStudyBody>
             <CaseStudyBulletList items={COMMUNICATION_FLOW_BULLETS} />
 
@@ -314,8 +341,9 @@ export default function HsbcDeceasedEstate() {
                Solution: Digital form submission
             </p>
             <CaseStudyBody>
-               Allow customers to fill out and submit forms digitally through the portal or
-               bereavement page, eliminating the need for physical mail.
+               Allow customers to fill out and submit forms digitally through
+               the portal or bereavement page, eliminating the need for physical
+               mail.
             </CaseStudyBody>
             <CaseStudyBulletList items={DOCUMENT_COMPLEXITY_BULLETS} />
 
@@ -323,16 +351,20 @@ export default function HsbcDeceasedEstate() {
                Stakeholder Interview
             </CaseStudyHeading>
             <CaseStudyBody>
-               This was performed to align ourselves with the clients interest and to be
-               briefed on their wants out of this design phase.
+               This was performed to align ourselves with the clients interest
+               and to be briefed on their wants out of this design phase.
             </CaseStudyBody>
 
-            <CaseStudySubHeading tone="light" bold>Key Things Noticed</CaseStudySubHeading>
+            <CaseStudySubHeading tone="light" bold>
+               Key Things Noticed
+            </CaseStudySubHeading>
             <QuoteBulletList items={STAKEHOLDER_NOTICED} />
 
-            <CaseStudyPlaceholder
-               label="Client Interview Script Miro board"
-               ratio="966 / 520"
+            <CaseStudyFigure
+               src={affinityMapSrc}
+               alt="Affinity map clustering findings from the HSBC stakeholder interview"
+               width={896}
+               height={396}
                caption="Client Interview Script"
             />
 
@@ -362,38 +394,33 @@ export default function HsbcDeceasedEstate() {
             <CaseStudySubHeading tone="light" bold>
                HSBC Bereavement page
             </CaseStudySubHeading>
-            <CaseStudyPlaceholder
-               label="Screenshot: existing HSBC bereavement support page"
-               ratio="966 / 620"
+            <CaseStudyFigure
+               src={existingBereavementSrc}
+               alt="The existing HSBC bereavement support page before redesign"
+               width={631}
+               height={369}
             />
 
             <CaseStudySubHeading tone="light" bold>
                Competitive Analysis
             </CaseStudySubHeading>
-            <CaseStudyPlaceholder
-               label="Competitive analysis chart: HSBC, NRMA, and Medicare"
-               ratio="966 / 480"
+            <CaseStudyFigure
+               src={competitiveAnalysisSrc}
+               alt="Competitive analysis comparing HSBC with NRMA and Medicare"
+               width={631}
+               height={369}
                caption="Competitive Analysis"
             />
 
             <CaseStudyBody>
-               Analysing the existing bereavement page helped me brainstorm a list of ideas
-               on how I want to tackle Case and Document management. These needs were
-               translated into potential solutions through the portal creation
+               Analysing the existing bereavement page helped me brainstorm a
+               list of ideas on how I want to tackle Case and Document
+               management. These needs were translated into potential solutions
+               through the portal creation
             </CaseStudyBody>
 
             <CaseStudyIssuesTable rows={HEURISTIC_ISSUES} />
 
-            <CaseStudyHeading id="user-interview">User Interview</CaseStudyHeading>
-            <CaseStudyPlaceholder label="User interview copy and artwork" />
-
-            <CaseStudyHeading id="persona-customer-journey">
-               Persona &amp; Customer Journey
-            </CaseStudyHeading>
-            <CaseStudyPlaceholder label="Persona card and customer journey map" />
-
-            <CaseStudyHeading id="findings">Findings</CaseStudyHeading>
-            <CaseStudyPlaceholder label="Research findings copy and artwork" />
          </CaseStudySection>
 
          <CaseStudyDivider />
@@ -411,7 +438,9 @@ export default function HsbcDeceasedEstate() {
             </CaseStudyBody>
             <CaseStudyBody>
                {[
-                  { text: 'I began to storyboard pages that would be needed. ' },
+                  {
+                     text: 'I began to storyboard pages that would be needed. ',
+                  },
                   {
                      text: "Three core features I'd need to ensure are included is an editable notifier's details page, a progress page and a document upload page",
                      marker: true,
@@ -422,9 +451,11 @@ export default function HsbcDeceasedEstate() {
                ]}
             </CaseStudyBody>
 
-            <CaseStudyPlaceholder
-               label="Hand-drawn wireframe storyboards"
-               ratio="966 / 720"
+            <CaseStudyFigure
+               src={wireframeStoryboardsSrc}
+               alt="Hand-drawn wireframe storyboards and ideation post-it notes"
+               width={1932}
+               height={1855}
             />
 
             <CaseStudyHeading id="lo-fi-design">Lo-Fi Design</CaseStudyHeading>
@@ -444,7 +475,10 @@ export default function HsbcDeceasedEstate() {
                   { text: ' The notifier should see ' },
                   { text: 'names of future steps', marker: true },
                   { text: ' and a ' },
-                  { text: 'history of past steps already completed.', marker: true },
+                  {
+                     text: 'history of past steps already completed.',
+                     marker: true,
+                  },
                ]}
             </CaseStudyBody>
 
@@ -475,7 +509,9 @@ export default function HsbcDeceasedEstate() {
                {[
                   { text: 'A ' },
                   { text: "'settlement page' needs to be added", marker: true },
-                  { text: ' for when an estate is finalized. This page allows the notifier to ' },
+                  {
+                     text: ' for when an estate is finalized. This page allows the notifier to ',
+                  },
                   {
                      text: "access and handle the deceased's accounts and money.",
                      marker: true,
@@ -483,9 +519,11 @@ export default function HsbcDeceasedEstate() {
                ]}
             </CaseStudyBody>
 
-            <CaseStudyPlaceholder
-               label="Lo-fi mobile wireframes: case list, progress, profile, notifier, and documents"
-               ratio="966 / 520"
+            <CaseStudyFigure
+               src={loFiWireframesSrc}
+               alt="Lo-fi mobile wireframes covering case list, progress, profile, notifier, and documents"
+               width={896}
+               height={548}
             />
 
             <CaseStudyHeading id="final-design">Final Design</CaseStudyHeading>
@@ -504,9 +542,11 @@ export default function HsbcDeceasedEstate() {
                ]}
             </CaseStudyBody>
 
-            <CaseStudyPlaceholder
-               label="Final hi-fi mobile screens: home, documents, progress, notifier, settlement, and quick links"
-               ratio="966 / 620"
+            <CaseStudyFigure
+               src={finalDesignSrc}
+               alt="Final hi-fi mobile screens: home, documents, progress, notifier, settlement, and quick links"
+               width={1932}
+               height={1833}
             />
          </CaseStudySection>
       </CaseStudyLayout>

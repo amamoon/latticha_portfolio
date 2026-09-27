@@ -1,7 +1,23 @@
+import glitchGridCanvasSrc from '@/assets/projects/glitch-website/branddesigngrid.webp'
+import fangamerCartSrc from '@/assets/projects/glitch-website/checkout.webp'
+import competitorLogosSrc from '@/assets/projects/glitch-website/competitiveanalysis.webp'
+import heroBannerSrc from '@/assets/projects/glitch-website/glitchbanner.webp'
+import rejectedBackgroundsSrc from '@/assets/projects/glitch-website/glitchproductions.webp'
+import glitchXBoardSrc from '@/assets/projects/glitch-website/glitchx.webp'
+import colourTreatmentsSrc from '@/assets/projects/glitch-website/glitchx1.webp'
+import gridVariantsSrc from '@/assets/projects/glitch-website/glitchx2.webp'
+import pomniComparisonSrc from '@/assets/projects/glitch-website/homepage-under.webp'
+import badgeGridSrc from '@/assets/projects/glitch-website/homepage-utilise.webp'
+import prototypeHomepageSrc from '@/assets/projects/glitch-website/homepage.webp'
+import fangamerGridSrc from '@/assets/projects/glitch-website/homepagefangamer.webp'
+import storefrontSrc from '@/assets/projects/glitch-website/problem.webp'
+import prototypeProductPageSrc from '@/assets/projects/glitch-website/productpage.webp'
+import fangamerProductPageSrc from '@/assets/projects/glitch-website/productpageyoutoo.webp'
 import {
    CaseStudyBody,
    CaseStudyBulletList,
    CaseStudyExpandable,
+   CaseStudyFigure,
    CaseStudyInsightRow,
    CaseStudyPillLink,
    CaseStudyPlaceholder,
@@ -16,6 +32,8 @@ import {
    CaseStudySection,
    CaseStudySubHeading,
 } from '@/components/case-study/CaseStudySection'
+
+const GLITCH_STORE_URL = 'https://glitchproductions.store/'
 
 const META: readonly CaseStudyMetaItem[] = [
    { label: 'Client', value: 'Glitch' },
@@ -42,12 +60,6 @@ const NAV: readonly CaseStudyNavItem[] = [
          { id: 'stakeholder-interview', label: 'Stakeholder Interview' },
          { id: 'competitive-analysis', label: 'Competitive Analysis' },
          { id: 'outdated-features', label: 'Outdated Features' },
-         { id: 'user-interview', label: 'User Interview' },
-         {
-            id: 'persona-customer-journey',
-            label: 'Persona & Customer Journey',
-         },
-         { id: 'findings', label: 'Findings' },
       ],
    },
    {
@@ -119,6 +131,7 @@ export default function GlitchWebsite() {
    return (
       <CaseStudyLayout
          title="Glitch Productions Website"
+         heroSrc={heroBannerSrc}
          heroAlt="Glitch Productions Website title banner"
          meta={META}
          nav={NAV}
@@ -149,9 +162,11 @@ export default function GlitchWebsite() {
             </CaseStudyBody>
          </CaseStudySection>
 
-         <CaseStudyPlaceholder
-            label="Screenshot: Glitch Productions storefront with Murder Drones hero and show catalogue"
-            ratio="966 / 1400"
+         <CaseStudyFigure
+            src={storefrontSrc}
+            alt="Glitch Productions storefront with Murder Drones hero and show catalogue"
+            width={651}
+            height={964}
          />
 
          <CaseStudySection>
@@ -227,9 +242,11 @@ export default function GlitchWebsite() {
                ]}
             </CaseStudyBody>
 
-            <CaseStudyPlaceholder
-               label="Competitor logos: Fangamer, YouTooz, and CoolShirtz"
-               ratio="966 / 280"
+            <CaseStudyFigure
+               src={competitorLogosSrc}
+               alt="Competitor logos: Fangamer, YouTooz, and CoolShirtz"
+               width={654}
+               height={249}
             />
 
             <CaseStudyExpandable label="Point Breakdown of Findings +">
@@ -253,15 +270,19 @@ export default function GlitchWebsite() {
                <CaseStudyInsightRow
                   quote="Fangamer indicates which game each of their products originates from in the bottom left of their merchandise. Including an additional badge in the corner could further distinguish this to customers."
                   footnote={
-                     <CaseStudyPlaceholder
-                        label="Pomni plush comparison: standard layout vs corner show badge"
-                        ratio="16 / 7"
+                     <CaseStudyFigure
+                        src={pomniComparisonSrc}
+                        alt="Pomni plush comparison: standard layout vs corner show badge"
+                        width={321}
+                        height={182}
                      />
                   }
                >
-                  <CaseStudyPlaceholder
-                     label="Fangamer product grid with game labels and preorder badge"
-                     ratio="4 / 3"
+                  <CaseStudyFigure
+                     src={fangamerGridSrc}
+                     alt="Fangamer product grid with game labels and preorder badge"
+                     width={495}
+                     height={495}
                   />
                </CaseStudyInsightRow>
 
@@ -273,9 +294,11 @@ export default function GlitchWebsite() {
                </CaseStudyInsightRow>
 
                <CaseStudyInsightRow quote="Utilise product badges over products to denote status or category of product (e.g. what show it's from).">
-                  <CaseStudyPlaceholder
-                     label="Product grid with NEW and PREORDER badges"
-                     ratio="4 / 3"
+                  <CaseStudyFigure
+                     src={badgeGridSrc}
+                     alt="Product grid with NEW and PREORDER badges"
+                     width={495}
+                     height={335}
                   />
                </CaseStudyInsightRow>
 
@@ -291,9 +314,11 @@ export default function GlitchWebsite() {
                </CaseStudyInsightRow>
 
                <CaseStudyInsightRow quote="Underneath the main product details and product image, Fangamer has larger feature photos to include things such as the product packaging or bonus features. This would be useful especially for IRL size representations of products - specifically 3D items (plushies, statues etc.).">
-                  <CaseStudyPlaceholder
-                     label="Fangamer product page with packaging photos and lenticular effect detail"
-                     ratio="4 / 3"
+                  <CaseStudyFigure
+                     src={fangamerProductPageSrc}
+                     alt="Fangamer product page with packaging photos and lenticular effect detail"
+                     width={494}
+                     height={494}
                   />
                </CaseStudyInsightRow>
 
@@ -302,9 +327,11 @@ export default function GlitchWebsite() {
                </CaseStudySubHeading>
 
                <CaseStudyInsightRow quote="An industry standard missing from the Glitch website included having the shopping cart as an overlay rather than a separate link. Fangamer was a good example of this whilst showing similar products at checkout to encourage increased basket sizes.">
-                  <CaseStudyPlaceholder
-                     label="Fangamer cart overlay with checkout actions and you may also like recommendations"
-                     ratio="3 / 4"
+                  <CaseStudyFigure
+                     src={fangamerCartSrc}
+                     alt="Fangamer cart overlay with checkout actions and you may also like recommendations"
+                     width={494}
+                     height={661}
                   />
                </CaseStudyInsightRow>
             </CaseStudyExpandable>
@@ -328,18 +355,7 @@ export default function GlitchWebsite() {
 
             <CaseStudyBulletList items={OUTDATED_FEATURES} />
 
-            <CaseStudyHeading id="user-interview">
-               User Interview
-            </CaseStudyHeading>
-            <CaseStudyPlaceholder label="User interview copy and artwork" />
 
-            <CaseStudyHeading id="persona-customer-journey">
-               Persona &amp; Customer Journey
-            </CaseStudyHeading>
-            <CaseStudyPlaceholder label="Persona card and customer journey map" />
-
-            <CaseStudyHeading id="findings">Findings</CaseStudyHeading>
-            <CaseStudyPlaceholder label="Research findings copy and artwork" />
          </CaseStudySection>
 
          <CaseStudyDivider />
@@ -372,9 +388,11 @@ export default function GlitchWebsite() {
                   with pastel purple and blue glitch effects.
                </CaseStudyBody>
 
-               <CaseStudyPlaceholder
-                  label="Glitch X / Japanese magazine inspiration board"
-                  ratio="966 / 480"
+               <CaseStudyFigure
+                  src={glitchXBoardSrc}
+                  alt="Glitch X / Japanese magazine inspiration board"
+                  width={965}
+                  height={305}
                />
 
                <CaseStudyBody>
@@ -389,9 +407,11 @@ export default function GlitchWebsite() {
                   ]}
                </CaseStudyBody>
 
-               <CaseStudyPlaceholder
-                  label="Rejected abstract / controller-inspired background explorations"
-                  ratio="966 / 420"
+               <CaseStudyFigure
+                  src={rejectedBackgroundsSrc}
+                  alt="Rejected abstract / controller-inspired background explorations"
+                  width={965}
+                  height={325}
                />
 
                <CaseStudyBody>
@@ -406,14 +426,18 @@ export default function GlitchWebsite() {
                   ]}
                </CaseStudyBody>
 
-               <CaseStudyPlaceholder
-                  label="Grid background variants narrowing toward the final canvas"
-                  ratio="966 / 480"
+               <CaseStudyFigure
+                  src={gridVariantsSrc}
+                  alt="Grid background variants narrowing toward the final canvas"
+                  width={966}
+                  height={493}
                />
 
-               <CaseStudyPlaceholder
-                  label="Additional brand journey board: colour and glitch treatments"
-                  ratio="966 / 480"
+               <CaseStudyFigure
+                  src={colourTreatmentsSrc}
+                  alt="Additional brand journey board: colour and glitch treatments"
+                  width={966}
+                  height={493}
                />
 
                <CaseStudyPlaceholder
@@ -439,9 +463,11 @@ export default function GlitchWebsite() {
                ]}
             </CaseStudyBody>
 
-            <CaseStudyPlaceholder
-               label="4x4 glitch grid with product card examples on purple border"
-               ratio="966 / 520"
+            <CaseStudyFigure
+               src={glitchGridCanvasSrc}
+               alt="4x4 glitch grid with product card examples on purple border"
+               width={966}
+               height={453}
             />
 
             <CaseStudyHeading id="prototype">Prototype</CaseStudyHeading>
@@ -457,14 +483,18 @@ export default function GlitchWebsite() {
                ]}
             </CaseStudyBody>
 
-            <CaseStudyPlaceholder
-               label="Prototype screens: catalogue homepage and product cards on the 4x4 grid"
-               ratio="966 / 720"
+            <CaseStudyFigure
+               src={prototypeHomepageSrc}
+               alt="Prototype screens: catalogue homepage and product cards on the 4x4 grid"
+               width={966}
+               height={767}
             />
 
-            <CaseStudyPlaceholder
-               label="Prototype screens: product page and cart / checkout overlays"
-               ratio="966 / 700"
+            <CaseStudyFigure
+               src={prototypeProductPageSrc}
+               alt="Prototype screens: product page and cart / checkout overlays"
+               width={966}
+               height={751}
             />
 
             <CaseStudyHeading id="final-design">Final Design</CaseStudyHeading>
@@ -483,15 +513,9 @@ export default function GlitchWebsite() {
                ]}
             </CaseStudyBody>
 
-            <CaseStudyPlaceholder
-               label="Final live storefront screenshots: catalogue homepage and show filters"
-               ratio="966 / 720"
-            />
-
-            <CaseStudyPlaceholder
-               label="Final product page and merchandising UI on the shipped site"
-               ratio="966 / 420"
-            />
+            <CaseStudyPillLink href={GLITCH_STORE_URL} external={true}>
+               Glitch Productions Store Page
+            </CaseStudyPillLink>
          </CaseStudySection>
 
          <CaseStudyDivider />

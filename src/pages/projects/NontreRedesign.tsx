@@ -1,3 +1,4 @@
+import competitiveAnalysisSrc from '@/assets/projects/nontre-redesign/competitiveanalysis.webp'
 import competitor1Src from '@/assets/projects/nontre-redesign/competitor-1.webp'
 import competitor2Src from '@/assets/projects/nontre-redesign/competitor-2.webp'
 import competitor3Src from '@/assets/projects/nontre-redesign/competitor-3.webp'
@@ -19,6 +20,7 @@ import breakdownDesktopSrc from '@/assets/projects/nontre-redesign/Group 64-3.pn
 import heroSrc from '@/assets/projects/nontre-redesign/hero.webp'
 import overviewSiteSrc from '@/assets/projects/nontre-redesign/overview-site.webp'
 import solutionMockupsSrc from '@/assets/projects/nontre-redesign/solution-mockups.webp'
+import stakeholderInterviewSrc from '@/assets/projects/nontre-redesign/stakeholderinterview.webp'
 import {
    CaseStudyBody,
    CaseStudyBulletList,
@@ -28,7 +30,6 @@ import {
    CaseStudyInsightList,
    CaseStudyJourneyMap,
    CaseStudyPillLink,
-   CaseStudyPlaceholder,
    CaseStudyThemeGrid,
    QuoteList,
    QuoteText,
@@ -580,9 +581,12 @@ export default function NontreRedesign() {
                ]}
             </CaseStudyBody>
 
-            <CaseStudyPlaceholder
-               label="Stakeholder kickoff board / workshop artifacts"
-               ratio="16 / 9"
+            <CaseStudyFigure
+               src={stakeholderInterviewSrc}
+               alt="Stakeholder interview board capturing Nontre’s mission, existing metrics, and desired website experience"
+               width={965}
+               height={533}
+               caption="Stakeholder Interview"
             />
 
             <CaseStudyHeading id="competitive-analysis">
@@ -598,6 +602,13 @@ export default function NontreRedesign() {
 
          <CaseStudySection>
             <CaseStudyImageRow items={COMPETITORS} />
+            <CaseStudyFigure
+               src={competitiveAnalysisSrc}
+               alt="Competitive analysis comparing Australian home-care e-commerce brands across brand identity and unique selling points"
+               width={965}
+               height={544}
+               caption="Competitive Analysis"
+            />
          </CaseStudySection>
 
          <CaseStudySection>

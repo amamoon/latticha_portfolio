@@ -11,8 +11,14 @@ export function ScrollToTop() {
 
    useEffect(() => {
       if (hash) {
-         document.getElementById(hash.slice(1))?.scrollIntoView()
-         return
+         const id = hash.slice(1)
+         const scrollToHash = () => {
+            document.getElementById(id)?.scrollIntoView()
+         }
+         scrollToHash()
+         // Home (and other) sections may not be painted on the first tick after route change.
+         const frame = window.requestAnimationFrame(scrollToHash)
+         return () => window.cancelAnimationFrame(frame)
       }
 
       window.scrollTo(0, 0)

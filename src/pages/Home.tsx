@@ -294,8 +294,12 @@ export default function Home() {
             />
          </header>
 
-         <section aria-label="UX Design" className="px-4 pb-0 pt-2 md:px-6">
-            {layout === 'grid' ? (
+         <section
+            id="ux-design"
+            aria-label="UX Design"
+            className="scroll-mt-20 px-4 pb-0 pt-2 md:px-6 lg:scroll-mt-8"
+         >
+e            {layout === 'grid' ? (
                <WorkSectionGrid
                   heading="ux design."
                   slots={uxSlots}
@@ -330,10 +334,14 @@ export default function Home() {
             )}
          </section>
 
-         <section aria-label="Project design" className="px-4 pb-0 pt-10 md:px-6 md:pt-12">
+         <section
+            id="merchandise-design"
+            aria-label="Merchandise design"
+            className="scroll-mt-20 px-4 pb-0 pt-10 md:px-6 md:pt-12 lg:scroll-mt-8"
+         >
             {layout === 'grid' ? (
                <WorkSectionGrid
-                  heading="project design."
+                  heading="merchandise design."
                   slots={projectDesignSlots}
                   cardColumns={2}
                   showLayoutToggle={false}
@@ -343,7 +351,7 @@ export default function Home() {
             ) : (
                <>
                   <SectionHeader
-                     label="project design."
+                     label="merchandise design."
                      layout={layout}
                      onLayoutChange={setLayout}
                   />
@@ -366,7 +374,11 @@ export default function Home() {
             )}
          </section>
 
-         <section aria-label="Branding" className="px-4 pb-12 pt-10 md:px-6 md:pt-12">
+         <section
+            id="branding"
+            aria-label="Branding"
+            className="scroll-mt-20 px-4 pb-12 pt-10 md:px-6 md:pt-12 lg:scroll-mt-8"
+         >
             {layout === 'grid' ? (
                <WorkSectionGrid
                   heading="branding."

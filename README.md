@@ -5,7 +5,7 @@ is fully static: it has no backend, no API calls, and no environment variables.
 
 ## Requirements
 
-- Node.js 22 (see `.nvmrc`)
+- Node.js 24 (see `.nvmrc`)
 - npm
 
 ## Getting started

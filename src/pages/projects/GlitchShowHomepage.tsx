@@ -1,9 +1,14 @@
 import welcomeHomeHomepage from '@/assets/homepage/ux_design/merchhomepage.webp'
+import showBannerSrc from '@/assets/projects/glitch-show-homepage/banner.webp'
+import kogLogoLockup from '@/assets/projects/glitch-show-homepage/KOG Logo Empty Planet 1.webp'
+import gaslightDistrictHomepage from '@/assets/projects/glitch-show-homepage/gaslight-district-homepage.webp'
+import gaslightDistrictStyleGuide from '@/assets/projects/glitch-show-homepage/gaslight.webp'
+import knightsOfGuinevereHomepage from '@/assets/projects/glitch-show-homepage/knights-of-guinevere-homepage.webp'
+import kogStyleGuide from '@/assets/projects/glitch-show-homepage/kogwebsite.webp'
 import {
    CaseStudyBody,
    CaseStudyFigure,
    CaseStudyPillLink,
-   CaseStudyPlaceholder,
 } from '@/components/case-study/CaseStudyBlocks'
 import { CaseStudyLayout } from '@/components/case-study/CaseStudyLayout'
 import type { CaseStudyMetaItem } from '@/components/case-study/CaseStudyMetaBar'
@@ -50,6 +55,7 @@ export default function GlitchShowHomepage() {
    return (
       <CaseStudyLayout
          title="Glitch Show Homepage"
+         heroSrc={showBannerSrc}
          heroAlt="Glitch Show Homepage title banner"
          meta={META}
          nav={NAV}
@@ -109,15 +115,19 @@ export default function GlitchShowHomepage() {
             >
                <div className="relative mx-auto flex w-full max-w-xl items-end justify-center px-2 py-4 sm:max-w-none sm:px-0">
                   <div className="relative z-10 w-[28%] shrink-0 -rotate-2 shadow-[0_8px_24px_rgb(0_0_0/0.12)] sm:w-[26%]">
-                     <CaseStudyPlaceholder
-                        label="Gaslight District show homepage"
-                        ratio="9 / 16"
+                     <CaseStudyFigure
+                        src={gaslightDistrictHomepage}
+                        alt="Gaslight District show homepage"
+                        width={922}
+                        height={1720}
                      />
                   </div>
                   <div className="relative z-20 w-[38%] shrink-0 shadow-[0_12px_32px_rgb(0_0_0/0.16)] sm:w-[34%]">
-                     <CaseStudyPlaceholder
-                        label="Knights of Guinevere show homepage"
-                        ratio="9 / 16"
+                     <CaseStudyFigure
+                        src={knightsOfGuinevereHomepage}
+                        alt="Knights of Guinevere show homepage"
+                        width={889}
+                        height={1720}
                      />
                   </div>
                   <div className="relative z-10 w-[28%] shrink-0 rotate-2 shadow-[0_8px_24px_rgb(0_0_0/0.12)] sm:w-[26%]">
@@ -130,9 +140,11 @@ export default function GlitchShowHomepage() {
                   </div>
                </div>
 
-               <CaseStudyPlaceholder
-                  label="Knights of Guinevere logo lockup"
-                  ratio="16 / 5"
+               <CaseStudyFigure
+                  src={kogLogoLockup}
+                  alt="Knights of Guinevere logo lockup"
+                  width={324}
+                  height={195}
                />
             </div>
 
@@ -140,13 +152,17 @@ export default function GlitchShowHomepage() {
                id="style-guide"
                className="scroll-mt-24 grid grid-cols-1 gap-6 sm:grid-cols-2"
             >
-               <CaseStudyPlaceholder
-                  label="Knights of Guinevere style guide: colours, buttons, banners, and assets"
-                  ratio="3 / 5"
+               <CaseStudyFigure
+                  src={kogStyleGuide}
+                  alt="Knights of Guinevere style guide: colours, buttons, banners, and assets"
+                  width={428}
+                  height={821}
                />
-               <CaseStudyPlaceholder
-                  label="Gaslight District style guide: colours, buttons, frames, and banners"
-                  ratio="3 / 5"
+               <CaseStudyFigure
+                  src={gaslightDistrictStyleGuide}
+                  alt="Gaslight District style guide: colours, buttons, frames, and banners"
+                  width={424}
+                  height={886}
                />
             </div>
          </CaseStudySection>
